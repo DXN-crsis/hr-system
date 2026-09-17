@@ -1,0 +1,37 @@
+{
+  "name": "hr-system",
+  "productName": "HR System",
+  "version": "1.0.0",
+  "description": "نظام إدارة الموارد البشرية",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "node check.js",
+    "dist": "electron-builder --win nsis"
+  },
+  "build": {
+    "appId": "iq.school.hr",
+    "files": [
+      "*.js",
+      "*.html",
+      "*.css",
+      "*.png",
+      "!check.js"
+    ],
+    "electronDist": "node_modules/electron/dist",
+    "nsis": {
+      "shortcutName": "نظام الموارد البشرية",
+      "artifactName": "HR-Setup-${version}.${ext}"
+    }
+  },
+  "dependencies": {
+    "@fontsource/ibm-plex-sans-arabic": "^5.3.0",
+    "docx": "^9.7.1",
+    "mammoth": "^1.12.3",
+    "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz"
+  },
+  "devDependencies": {
+    "electron": "^44.4.1",
+    "electron-builder": "^26.15.3"
+  }
+}
